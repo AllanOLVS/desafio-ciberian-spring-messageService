@@ -23,12 +23,10 @@ public class User {
     @Column(name = "role")
     private Role role;
 
-    // Variaveis de auditoria
     private String createdBy;
-    private Instant createAt;
+    private Instant createdAt;
     private String updatedBy;
     private Instant updateAt;
-
 
     public User() {
 
@@ -73,7 +71,6 @@ public class User {
         this.role = role;
     }
 
-    // Getters e setters variaveis de auditoria
     public String getCreatedBy() {
         return createdBy;
     }
@@ -82,12 +79,12 @@ public class User {
         this.createdBy = createdBy;
     }
 
-    public Instant getCreateAt() {
-        return createAt;
+    public Instant getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreateAt(Instant createAt) {
-        this.createAt = createAt;
+    public void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
     }
 
     public String getUpdatedBy() {
@@ -108,7 +105,8 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass())
+            return false;
         User user = (User) o;
         return Objects.equals(id, user.id);
     }
